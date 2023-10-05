@@ -1,0 +1,24 @@
+<div class="ui small inverted menu">
+  <div class="ui container">
+    <a class="item">
+      <%= link_to "Chatroom", root_path, class: "item" %>
+    </a>
+    <a class="item">
+      Messages
+    </a>
+    <div class="item">
+      <% if logged_in? %>
+        <div class="ui primary button">
+          <%= button_to "Log out", logout_path, method: :delete, class: "ui primary button", style: "padding:0rem 0rem;" %>
+        </div>
+      <% else %>
+        <div class="ui primary button" style="margin-right: 1000px;">
+         <%= link_to "Log in", login_path, class: "ui primary button", style: "padding:0rem 0rem; " %>
+        </div>
+        <div class="ui primary button">
+          <%= link_to "Sign up", login_path, class: "ui primary button", style: "padding:0rem 0rem; " %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="event">
+  <div class="content">
+    <div class="summary">
+      <em><%= message.user.username %></em>: <%= message.body %>
+    </div>
+  </div>
+</div>
+<%# Turbo Stream for appending the message %>
+<turbo-stream action="append" target="messages">
+  <template>
+    <%= render 'message', message: message %>
+  </template>
+</turbo-stream>
+
+
+
+
